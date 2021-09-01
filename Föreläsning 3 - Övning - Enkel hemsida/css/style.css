@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+}
+header, main, footer{
+    padding: 15px;
+    color: blanchedalmond;
+    background-image: url("C:/Users/Lenovo/Documents/Front-End 2021/Föreläsning 3 - Övning - Enkel hemsida/Image/moroccan-flower-dark.png");
+}
+
+
+#container{
+    width: 960px;
+    border: 1px solid black;
+    margin: 20px auto;
+}
+
+header{
+    background-color: rgb(76, 76, 221);
+    height: 150px;
+    border-bottom: 1px solid black;
+}
+
+#header-title{
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+    margin: 0px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 40px;
+}
+
+#header-nav{
+    float: right;
+}
+
+#header-nav ul li{
+    float: left;
+    list-style-type: none;
+    /*margin-right: 10px;*/
+}
+
+#header-nav ul li a{
+    text-decoration: none;
+    color: blanchedalmond;
+    padding: 10px;
+}
+
+#header-nav li a:hover{
+    background-color: blue;
+}
+
+#dropdown{
+    position: relative;
+    /*margin-bottom: 20px;*/
+}
+
+#dropdown-content{
+    position: absolute;
+    width: 100px;
+    padding: 0;
+    display: none;
+}
+
+#dropdown:hover #dropdown-content {
+    display: block;
+}
+
+#dropdown-content li{
+    padding: 10px 0;
+}
+
+main{
+    background-color: rgb(180, 135, 68);
+    height: 300px;
+}
+
+
+footer{
+    background-color: brown;
+    height: 100px;
+    border-top: 1px solid black;
+}
+
