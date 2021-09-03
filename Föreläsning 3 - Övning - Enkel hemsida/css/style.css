@@ -1,8 +1,12 @@
 *{
     box-sizing: border-box;
 }
-header, main, footer{
-    padding: 15px;
+
+.clearfix {
+    overflow: auto;
+  }
+
+header, section, footer, aside{
     color: blanchedalmond;
     background-image: url("C:/Users/Lenovo/Documents/Front-End 2021/Föreläsning 3 - Övning - Enkel hemsida/Image/moroccan-flower-dark.png");
 }
@@ -10,6 +14,7 @@ header, main, footer{
 
 #container{
     width: 960px;
+    height: 1500px;
     border: 1px solid black;
     margin: 20px auto;
 }
@@ -29,14 +34,18 @@ header{
     font-size: 40px;
 }
 
-#header-nav{
+#nav-container{
     float: right;
+    width: 327px;
+}
+
+#header-nav{
+    position: fixed;
 }
 
 #header-nav ul li{
     float: left;
     list-style-type: none;
-    /*margin-right: 10px;*/
 }
 
 #header-nav ul li a{
@@ -59,6 +68,7 @@ header{
     width: 100px;
     padding: 0;
     display: none;
+    top: 25px;
 }
 
 #dropdown:hover #dropdown-content {
@@ -70,14 +80,87 @@ header{
 }
 
 main{
-    background-color: rgb(180, 135, 68);
-    height: 300px;
+    background-color: blueviolet;
+    display: block;
+    height: 500px;
+    width: 959px;
 }
 
+aside{
+    /*display: inline-block;*/
+    height: 800px;
+    width: 200px;
+    float: left;
+
+}
+
+section{
+    /*display: inline-block;*/
+    background-color: rgb(180, 135, 68);
+    height: 800px;
+    width: 759px;
+    float: left;
+}
+
+#side-header-nav ul li{
+    list-style-type: none;
+}
+
+#side-header-nav ul li a{
+    text-decoration: none;
+    color: blanchedalmond;
+    display: inline-block;
+    padding: 5px;
+}
+
+#side-header-nav li a:hover{
+    background-color: blue;
+}
+
+#side-dropdown-content{
+    display: none;
+    padding-left: 20px;
+}
+
+#side-dropdown:hover #side-dropdown-content{
+    display: inline-block;
+}
+
+h1{
+    font-family:monospace;
+    font-size: 40px;
+}
+
+img{
+    margin-right: 10px;
+}
+
+article p{
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+form{
+    border: 1px solid black;
+    width: 500px;
+    padding: 10px;
+}
+
+input[type="text"], input[type="email"] {
+    width: 95%;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+#radio-buttons{
+    margin: 10px;
+}
 
 footer{
     background-color: brown;
     height: 100px;
-    border-top: 1px solid black;
+    border: 1px solid black;
+    display: block;
 }
-

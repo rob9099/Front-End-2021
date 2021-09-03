@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="container">
+
+        <header>
+            <p id="header-title">Header</p>
+            
+            <div id="nav-container">
+                <nav id="header-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Portfölj</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                        <li id="dropdown"><a href="index.html">Dropdown</a>
+                            <ul id="dropdown-content">
+                                <li><a href="">Link 1</a></li>
+                                <li><a href="">Link 2</a></li>
+                                <li><a href="">Link 3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                
+                </nav>
+            </div> 
+        </header>
+
+        <main>
+            <aside>
+                <nav id="side-header-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Portfölj</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                        <li id="side-dropdown"><a href="index.html">Dropdown</a>
+                            <ul id="side-dropdown-content">
+                                <li><a href="">Link 1</a></li>
+                                <li><a href="">Link 2</a></li>
+                                <li><a href="">Link 3</a></li>
+                            </ul>
+                        </li>
+                    </ul>        
+                </nav>
+            </aside>
+            <section>
+                <h1>Kontakta oss!</h1>
+                <form>
+                    <label for="firstname">First Name</label>
+                    <input type="text" name="firstname" id="firstname" placeholder="First name">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Last name">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Email">
+
+                    
+                    <div id="radio-buttons">
+                        <label for="gender">Gender:</label>
+                        <label for="male">Male</label>
+                        <input type="radio" name="gender" id="male" value="male">
+                        <label for="female">Female</label>
+                        <input type="radio" name="gender" id="female" value="female">
+                        <label for="other">Other</label>
+                        <input type="radio" name="gender" id="other" value="other">
+                    </div>
+                </form>
+            </section>
+
+        </main>
+
+
+        <footer>Footer</footer>
+
+    </div>
+
+
+
+</body>
+
+</html>
