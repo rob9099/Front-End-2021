@@ -82,7 +82,6 @@ header{
 main{
     background-color: blueviolet;
     display: block;
-    height: 500px;
     width: 959px;
 }
 
@@ -102,24 +101,29 @@ section{
     float: left;
 }
 
-#side-header-nav ul li{
+#side-nav ul li{
     list-style-type: none;
 }
 
-#side-header-nav ul li a{
+#side-nav ul li a{
     text-decoration: none;
     color: blanchedalmond;
     display: inline-block;
     padding: 5px;
 }
 
-#side-header-nav li a:hover{
+#side-nav li a:hover{
     background-color: blue;
+}
+
+#side-dropdown{
+    position: relative;
 }
 
 #side-dropdown-content{
     display: none;
     padding-left: 20px;
+    position: absolute;
 }
 
 #side-dropdown:hover #side-dropdown-content{
@@ -132,30 +136,40 @@ h1{
 }
 
 img{
-    margin-right: 10px;
+    margin-right: 20px;
+    height: 400px;
+    width: 320px;
+    float: left;
 }
 
 article p{
     font-size: 20px;
-    margin-right: 5px;
+    margin-right: 20px;
 }
 
 form{
-    border: 1px solid black;
+    border-style: inset;
     width: 500px;
     padding: 10px;
 }
 
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], select, textarea{
     width: 95%;
     margin: 10px;
     padding: 5px;
     border-radius: 10px;
 }
 
-
 #radio-buttons{
-    margin: 10px;
+    margin-bottom: 10px;
+}
+
+#radio-buttons input{
+    margin: 7px;
+}
+
+input[type="submit"]{
+    background-color: rgb(189, 79, 79);
 }
 
 footer{

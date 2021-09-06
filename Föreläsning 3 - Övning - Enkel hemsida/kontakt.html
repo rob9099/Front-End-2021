@@ -36,7 +36,7 @@
 
         <main>
             <aside>
-                <nav id="side-header-nav">
+                <nav id="side-nav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index.html">Portfölj</a></li>
@@ -55,7 +55,7 @@
                 <h1>Kontakta oss!</h1>
                 <form>
                     <label for="firstname">First Name</label>
-                    <input type="text" name="firstname" id="firstname" placeholder="First name">
+                    <input type="text" name="firstname" id="firstname" placeholder="First name" required>
                     <label for="lastname">Last Name</label>
                     <input type="text" name="lastname" id="lastname" placeholder="Last name">
                     <label for="email">Email</label>
@@ -63,14 +63,38 @@
 
                     
                     <div id="radio-buttons">
-                        <label for="gender">Gender:</label>
+                        <label for="gender">Gender:</label><br>
                         <label for="male">Male</label>
                         <input type="radio" name="gender" id="male" value="male">
                         <label for="female">Female</label>
                         <input type="radio" name="gender" id="female" value="female">
                         <label for="other">Other</label>
-                        <input type="radio" name="gender" id="other" value="other">
+                        <input type="radio" name="gender" id="other" value="other" checked>
                     </div>
+                        
+                    <div id="landlista">
+                        <label for="country">Country</label>
+                        <select name="country" id="country">
+                            <option value="SE">Sweden</option>
+                            <option selected value="NO">Norway</option>
+                            <option value="FI">Finland</option>
+                            <option value="DK">Denmark</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="comment"></label>
+                        <textarea name="comment" id="comment" cols="30" rows="10" placeholder="kommentera"></textarea>
+                    </div>
+
+                    <label for="file">Select a file:</label>
+                    <input type="file" id="file" name="file"><br><br>
+
+
+                    <label for="terms">Do you agree to the terms?</label>
+                    <input type="checkbox" name="terms" id="terms" value="terms" required>
+
+                    <br><br><input type="submit" value="Skicka">
                 </form>
             </section>
 
