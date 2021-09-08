@@ -14,7 +14,7 @@ header, section, footer, aside{
 
 #container{
     width: 960px;
-    height: 1500px;
+    height: 2500px;
     border: 1px solid black;
     margin: 20px auto;
 }
@@ -55,7 +55,7 @@ header{
 }
 
 #header-nav li a:hover{
-    background-color: blue;
+    background-color: rgba(165, 116, 42, 0.35);
 }
 
 #dropdown{
@@ -113,7 +113,7 @@ section{
 }
 
 #side-nav li a:hover{
-    background-color: blue;
+    background-color: rgba(165, 116, 42, 0.35);
 }
 
 #side-dropdown{
@@ -170,6 +170,90 @@ input[type="text"], input[type="email"], select, textarea{
 
 input[type="submit"]{
     background-color: rgb(189, 79, 79);
+}
+
+#gridscontainer{
+    display: grid;
+    background-image: url("C:/Users/Lenovo/Documents/Front-End 2021/Föreläsning 3 - Övning - Enkel hemsida/Image/moroccan-flower-dark.png");
+    width: 759px;
+    height: 900px;
+    grid-template-rows: repeat(4, 18%);
+    grid-template-columns: 3% 94% 3%;
+    padding: 5px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#cv1 img{
+    width: 175px;
+    height: 59px;
+}
+
+#cv2 img, #cv4 img{
+    width: 100px;
+    height: 100px;
+    float: right;
+    margin: 0 0 0 20px;
+}
+
+#cv3 img{
+    width: 150px;
+    height: 84px;
+}
+
+#cv1, #cv3{
+    grid-column: 2 / 4;
+}
+
+#cv2, #cv4{
+    grid-column: 1 / 3;
+}
+
+#gridscontainer > div{
+    border: 3px inset rgb(165, 116, 42);
+    padding: 10px;
+    margin: 10px;
+}
+
+#gridscontainer > div > div{
+    display: grid;
+    grid-template-rows: 75%;
+    grid-template-columns: 100%;
+    border: 1px dotted rgb(48, 177, 43);
+    margin: 0;
+}
+
+#gridscontainer-2{
+    display: grid;
+    width: 759px;
+    height: 900px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: auto;
+    grid-template-areas: 
+        "header header header"
+        "aside main main"
+        "footer footer footer"
+    ;
+}
+
+#box1{
+    grid-area: header;
+    background-color: rgb(165, 116, 42);
+}
+
+#box2{
+    grid-area: aside;
+    background-color: rgb(180, 135, 68);
+}
+
+#box3{
+    grid-area: main;
+    background-color: rgb(48, 177, 43);
+}
+
+#box4{
+    grid-area: footer;
+    background-color: rgba(165, 116, 42, 0.35);
 }
 
 footer{
