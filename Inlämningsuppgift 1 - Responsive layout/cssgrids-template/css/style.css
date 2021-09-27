@@ -331,13 +331,13 @@ main{
 	background-color: var(--extra-uppgift-färg);
 	display: flex;
 	flex-wrap: wrap;
-	padding: 1.5%;
-	column-gap: 1.5%;
+	padding: 20px;
+	column-gap: 10px;
 	row-gap: 10px;
 }
 
 main section{
-	flex-basis: 310px;
+	flex-basis: 242px;
 	flex-grow: 1;
-	flex-shrink: 1;
+	
 }
