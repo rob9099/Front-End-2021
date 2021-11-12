@@ -19,6 +19,8 @@ läggTillSyssla.addEventListener('click', function(){
     
     
     let liPlusAlltAnnat = '';
+    liPlusAlltAnnat = document.createElement('li');
+    
     let input = document.getElementById('läggTillSysslaFält').value;
     document.getElementById('läggTillSysslaFält').value = '';
     
@@ -29,6 +31,7 @@ läggTillSyssla.addEventListener('click', function(){
         inputfält.value = input;
         inputfält.disabled = true;
         inputfält.size = '35';
+        liPlusAlltAnnat.appendChild(inputfält);
         return inputfält;
     }
 
@@ -38,8 +41,9 @@ läggTillSyssla.addEventListener('click', function(){
         
         let ändraknapp = document.createElement('button');
         ändraknapp.innerHTML = 'Ändra';
-        ändraknapp.className = "btn btn-warning";
-
+        ändraknapp.className = 'btn btn-warning';
+        ändraknapp
+        liPlusAlltAnnat.appendChild(ändraknapp);
         return ändraknapp;
     }
 
@@ -48,7 +52,8 @@ läggTillSyssla.addEventListener('click', function(){
     function skapaFärdigställknapp(){
         let färdigställknapp = document.createElement('button');
         färdigställknapp.innerHTML = 'Färdig';
-        färdigställknapp.className = "btn btn-success";
+        färdigställknapp.className = 'btn btn-success';
+        liPlusAlltAnnat.appendChild(färdigställknapp);
         return färdigställknapp;
     };
 
@@ -58,6 +63,7 @@ läggTillSyssla.addEventListener('click', function(){
         let raderaknapp = document.createElement('button');
         raderaknapp.innerHTML = 'Radera';
         raderaknapp.className = 'btn btn-danger';
+        liPlusAlltAnnat.appendChild(raderaknapp);
         return raderaknapp;
     }
 
@@ -105,8 +111,6 @@ läggTillSyssla.addEventListener('click', function(){
         document.getElementById('felmeddelanderuta').innerHTML = felmeddelanden;
         document.getElementById('felmeddelanderuta').style.backgroundColor = 'Red';
     }else{
-        liPlusAlltAnnat = document.createElement('li');
-        liPlusAlltAnnat.append(skapaInputfältVariabel, tryckÄndraknapp, tryckFärdigställknapp, tryckRaderaknapp);
         attGöraLista.appendChild(liPlusAlltAnnat);
     }
 })
