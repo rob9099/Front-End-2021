@@ -1,0 +1,7 @@
+Starta
+Fråga om höjden
+Spara höjden
+Fråga om bredden
+Spara bredden
+Räkna ut arean
+Visa arean i konsollen

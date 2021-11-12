@@ -1,0 +1,17 @@
+ul h2, li{
+    text-align: center;
+    color: rgb(170, 190, 190);
+}
+
+main{
+    margin-top: 50px;
+}
+
+#läggTillSysslaFält, #läggTillSysslaKnapp, #återställningsknapp{
+    position: relative;
+    left: 35%;
+}
+
+body{
+    background: linear-gradient(to right, #c33764, #1d2671) !important;
+}

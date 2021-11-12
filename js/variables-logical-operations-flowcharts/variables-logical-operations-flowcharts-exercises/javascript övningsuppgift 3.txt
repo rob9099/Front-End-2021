@@ -1,0 +1,6 @@
+Starta
+Fråga om det regnar
+Om ja stanna hemma
+	klar
+Om nej gå ut
+	klar
