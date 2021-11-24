@@ -24,7 +24,7 @@ läggTillSyssla.addEventListener('click', function(){
     let input = document.getElementById('läggTillSysslaFält').value;
     document.getElementById('läggTillSysslaFält').value = '';
     
-    skapaInputfältVariabel = skapaInputfält();
+    let skapaInputfältVariabel = skapaInputfält();
     
     function skapaInputfält(){
         let inputfält = document.createElement('input');
@@ -35,19 +35,18 @@ läggTillSyssla.addEventListener('click', function(){
         return inputfält;
     }
 
-    tryckÄndraknapp = skapaÄndraknapp();
+    let tryckÄndraknapp = skapaÄndraknapp();
 
     function skapaÄndraknapp(){
         
         let ändraknapp = document.createElement('button');
         ändraknapp.innerHTML = 'Ändra';
         ändraknapp.className = 'btn btn-warning';
-        ändraknapp
         liPlusAlltAnnat.appendChild(ändraknapp);
         return ändraknapp;
     }
 
-    tryckFärdigställknapp = skapaFärdigställknapp();
+    let tryckFärdigställknapp = skapaFärdigställknapp();
     
     function skapaFärdigställknapp(){
         let färdigställknapp = document.createElement('button');
@@ -57,7 +56,7 @@ läggTillSyssla.addEventListener('click', function(){
         return färdigställknapp;
     };
 
-    tryckRaderaknapp = skapaRaderaknapp();
+    let tryckRaderaknapp = skapaRaderaknapp();
 
     function skapaRaderaknapp(){
         let raderaknapp = document.createElement('button');
@@ -67,40 +66,52 @@ läggTillSyssla.addEventListener('click', function(){
         return raderaknapp;
     }
 
-    tryckÄndraknapp.addEventListener('click', function(){
-
-        tryckÄndraknapp.innerHTML = 'Spara';
+    let tryckaPåKnappar = {
         
-        if(skapaInputfältVariabel.disabled == false){
-            skapaInputfältVariabel.disabled = true;
-                
-            if(skapaInputfältVariabel.value == ''){
-                felmeddelanden = 'Får ej spara tomma sysslor!';
-                document.getElementById('felmeddelanderuta').innerHTML = felmeddelanden;
-                skapaInputfältVariabel.disabled = false;
-            }else{
-                input = skapaInputfältVariabel.value;
-                document.getElementById('felmeddelanderuta').innerHTML = '';
-                tryckÄndraknapp.innerHTML = 'Ändra';
-            }
+        tryckÄndraknapp:
+        function tryckÄndraknapp (){
 
-        }else{
-            skapaInputfältVariabel.disabled = false;
-        };
-    });
+            tryckÄndraknapp.innerHTML = 'Spara';
+            
+            if(skapaInputfältVariabel.disabled == false){
+                skapaInputfältVariabel.disabled = true;
+                    
+                if(skapaInputfältVariabel.value == ''){
+                    felmeddelanden = 'Får ej spara tomma sysslor!';
+                    document.getElementById('felmeddelanderuta').innerHTML = felmeddelanden;
+                    skapaInputfältVariabel.disabled = false;
+                }else{
+                    input = skapaInputfältVariabel.value;
+                    document.getElementById('felmeddelanderuta').innerHTML = '';
+                    tryckÄndraknapp.innerHTML = 'Ändra';
+                }
+    
+            }else{
+                skapaInputfältVariabel.disabled = false;
+            };
+        },
+
+        tryckFärdigställknapp:
+        function tryckFärdigställknapp (){
+            attGöraLista.nextElementSibling.appendChild(liPlusAlltAnnat);
+            tryckFärdigställknapp.style.display = 'none';
+        },
+
+        tryckRaderaknapp:
+        function tryckRaderaknapp (){
+            liPlusAlltAnnat.remove()
+        }
+    };
     
 
-    tryckFärdigställknapp.addEventListener('click', function(){
-        attGöraLista.nextElementSibling.appendChild(liPlusAlltAnnat);
-        tryckFärdigställknapp.style.display = 'none';
-    })
+    tryckÄndraknapp.addEventListener('click', tryckaPåKnappar.tryckÄndraknapp);
+    tryckFärdigställknapp.addEventListener('click', tryckaPåKnappar.tryckFärdigställknapp);
+    tryckRaderaknapp.addEventListener('click', tryckaPåKnappar.tryckRaderaknapp);
 
-    tryckRaderaknapp.addEventListener('click', function(){
-        liPlusAlltAnnat.remove();
-    })
 
     återställningsknapp.addEventListener('click', function(){
         liPlusAlltAnnat.remove();
+        document.getElementById('felmeddelanderuta').innerHTML = '';
     })
 
     let felmeddelanden = '';
