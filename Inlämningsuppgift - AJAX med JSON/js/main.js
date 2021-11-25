@@ -8,24 +8,11 @@ async function getData (whichDataWouldYouLike) {
         let data = await response.json();
         console.log(data);
 
-        let result = '';
-        for (let article of data){
-            
-            result += 
-            `
-            <article>
-            <h2>Name: ${article.name}<h2>
-            <h3><i>Nickname: ${article.nickname}</i></h3>
-            <img src='${article.img}'>
-            <p>Appearance in season(s): ${seasonAppearances(article.appearance)}</p>
-            <p>Occupation: ${occupation(article.occupation)}</p>
-            <p>Birthday: ${birthday(article.birthday)}</p>
-            <p>Portrayed by: ${article.portrayed}</p>
-            <p>Status: ${article.status}</p>
-            `
+        if (!response.ok){
+            throw new Error ('Some network problems')
         };
 
-        content.innerHTML = result;
+        createElements(data);
 
     } catch (error) {
         content.innerHTML = 'Sorry error: ' + error;
@@ -87,4 +74,26 @@ function birthday (birthdayData){
         birthday = birthdayData;
     }
     return birthday;
+}
+
+function createElements (data){
+    
+    let result = '';
+    for (let article of data){
+        
+        result += 
+        `
+        <article>
+        <h2>Name: ${article.name}<h2>
+        <h3><i>Nickname: ${article.nickname}</i></h3>
+        <img src='${article.img}'>
+        <p>Appearance in season(s): ${seasonAppearances(article.appearance)}</p>
+        <p>Occupation: ${occupation(article.occupation)}</p>
+        <p>Birthday: ${birthday(article.birthday)}</p>
+        <p>Portrayed by: ${article.portrayed}</p>
+        <p>Status: ${article.status}</p>
+        `
+    };
+
+    content.innerHTML = result;
 }
