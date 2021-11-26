@@ -21,18 +21,26 @@ async function getData (whichDataWouldYouLike) {
 
 
 
-let generateRandomCharacterButton = document.getElementById('generateRandomCharacterButton');
+let pressGenerateRandomCharacterButton = document.getElementById('generateRandomCharacterButton');
 
-generateRandomCharacterButton.addEventListener('click', function(){
+pressGenerateRandomCharacterButton.addEventListener('click', function(){
     let randomCharacterAPI = 'character/random';
+    
+    document.body.style.backgroundImage = "url('img/1-16.jpg')";
+    let backgroundImage = document.body.style.backgroundImage;
+    //backgroundImage.opacity = '0.5';
+    console.log(backgroundImage);
+    
     getData(randomCharacterAPI);
 })
 
-let searchButton = document.getElementById('searchButton');
+let pressSearchButton = document.getElementById('searchButton');
 
-searchButton.addEventListener('click', function(){
+pressSearchButton.addEventListener('click', function(){
+    document.body.style.backgroundImage = "url('img/1-16.jpg')";
     let searchFieldInput = document.getElementById('searchField').value;
     let searchCharacterAPI = 'characters?name=' + searchFieldInput;
+    document.getElementById('searchField').value = '';
     getData(searchCharacterAPI);
 });
 
@@ -92,6 +100,7 @@ function createElements (data){
         <p>Birthday: ${birthday(article.birthday)}</p>
         <p>Portrayed by: ${article.portrayed}</p>
         <p>Status: ${article.status}</p>
+        </article>
         `
     };
 
