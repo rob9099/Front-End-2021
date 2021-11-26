@@ -2,9 +2,9 @@
 
 let content = document.getElementById('content');
 
-async function getData (whichDataWouldYouLike) {
+async function getData (selectDataByAPI) {
     try {
-        let response = await fetch ('https://www.breakingbadapi.com/api/' + whichDataWouldYouLike);
+        let response = await fetch ('https://www.breakingbadapi.com/api/' + selectDataByAPI);
         let data = await response.json();
         console.log(data);
 
@@ -22,11 +22,10 @@ async function getData (whichDataWouldYouLike) {
 
 
 let pressGenerateRandomCharacterButton = document.getElementById('generateRandomCharacterButton');
-
 pressGenerateRandomCharacterButton.addEventListener('click', function(){
-    let randomCharacterAPI = 'character/random';
     
     document.body.style.backgroundImage = "url('img/1-16.jpg')";
+    let randomCharacterAPI = 'character/random';
     let backgroundImage = document.body.style.backgroundImage;
     //backgroundImage.opacity = '0.5';
     console.log(backgroundImage);
@@ -34,15 +33,28 @@ pressGenerateRandomCharacterButton.addEventListener('click', function(){
     getData(randomCharacterAPI);
 })
 
-let pressSearchButton = document.getElementById('searchButton');
 
+
+let pressSearchButton = document.getElementById('searchButton');
 pressSearchButton.addEventListener('click', function(){
+    
     document.body.style.backgroundImage = "url('img/1-16.jpg')";
     let searchFieldInput = document.getElementById('searchField').value;
     let searchCharacterAPI = 'characters?name=' + searchFieldInput;
     document.getElementById('searchField').value = '';
     getData(searchCharacterAPI);
 });
+
+
+
+let pressgetAllCharactersButton = document.getElementById('getAllCharactersButton');
+pressgetAllCharactersButton.addEventListener('click', function(){
+    
+    document.body.style.backgroundImage = "url('img/1-16.jpg')";
+    let searchCharacterAPI = 'characters';
+    getData(searchCharacterAPI);
+});
+
 
 
 function occupation(occupationData){
@@ -53,6 +65,7 @@ function occupation(occupationData){
     occupationString = occupationString.slice(0, -1);
     return occupationString;
 }
+
 
 
 function seasonAppearances(seasonAppearanceData){
@@ -71,6 +84,7 @@ function seasonAppearances(seasonAppearanceData){
 }
 
 
+
 function birthday (birthdayData){
     let birthday = '';
     if(birthdayData == null){
@@ -83,6 +97,8 @@ function birthday (birthdayData){
     }
     return birthday;
 }
+
+
 
 function createElements (data){
     
