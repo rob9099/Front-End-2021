@@ -37,15 +37,42 @@ header{
     text-align: center;
 }
 
+input{
+    background-color: rgb(48, 42, 42);
+    border-radius: 5%;
+    font-size: 16px;
+    border-color: rgb(39, 69, 45);
+}
+
+input, select, textarea{
+    color: #e0cfcf;
+    font-family: "Heartbreaking";
+    font-size: 25px;
+}
+
+#searchButton, #generateRandomCharacterButton, #getAllCharactersButton{
+    color: rgb(255, 254, 248);
+    font-family: "Yoru-aka";
+    font-size: 19px;
+}
+
+#searchButton{
+    background-color:  rgb(29, 59, 47);
+}
+
+#generateRandomCharacterButton{
+    background-color:  rgb(44, 75, 44);
+}
+
+#getAllCharactersButton{
+    background-color:  rgb(52, 94, 54);
+}
+
 p{
     font-family: "Yoru-aka";
     text-align: center;
     color: rgb(77, 73, 69);
 }
-
-/*p{
-    font-size: 30px;
-}*/
 
 img{
     display: block;
