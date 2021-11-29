@@ -25,11 +25,7 @@ let pressGenerateRandomCharacterButton = document.getElementById('generateRandom
 pressGenerateRandomCharacterButton.addEventListener('click', function(){
     
     document.body.style.backgroundImage = "url('img/1-16.jpg')";
-    let randomCharacterAPI = 'character/random';
-    let backgroundImage = document.body.style.backgroundImage;
-    //backgroundImage.opacity = '0.5';
-    console.log(backgroundImage);
-    
+    let randomCharacterAPI = 'character/random';    
     getData(randomCharacterAPI);
 })
 
@@ -38,12 +34,27 @@ pressGenerateRandomCharacterButton.addEventListener('click', function(){
 let pressSearchButton = document.getElementById('searchButton');
 pressSearchButton.addEventListener('click', function(){
     
+    /* Code no longer necessary because of input field eventListener below
+
     document.body.style.backgroundImage = "url('img/1-16.jpg')";
     let searchFieldInput = document.getElementById('searchField').value;
-    let searchCharacterAPI = 'characters?name=' + searchFieldInput;
+    let searchCharacterAPI = 'characters?name=' + searchFieldInput;*/
     document.getElementById('searchField').value = '';
-    getData(searchCharacterAPI);
+    //getData(searchCharacterAPI);
 });
+
+
+
+let writingInSearchFieldInput = document.getElementById('searchField');
+writingInSearchFieldInput.addEventListener('input', function(){
+
+    let searchFieldInput = writingInSearchFieldInput.value;
+    document.body.style.backgroundImage = "url('img/1-16.jpg')";
+    let searchCharacterAPI = 'characters?name=' + searchFieldInput;
+    getData(searchCharacterAPI);
+})
+
+
 
 
 

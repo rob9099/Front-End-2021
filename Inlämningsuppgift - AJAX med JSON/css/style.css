@@ -11,7 +11,7 @@
 
 h1{
     font-family: "Heartbreaking";
-    color:rgb(92, 83, 72);
+    color:rgb(209, 206, 202);
     font-size: 80px;
 }
 
@@ -80,12 +80,13 @@ img{
     margin-left: auto;
     margin-right: auto;
 }
+
 body{
     background-image: url(../img/1.jpg);
     background-position-y: 220px;
     background-size: 1920px;
     background-repeat: no-repeat;
-    background-color: #c2b8b8;
+    background-color: rgb(163, 144, 131);
 }
 
 article{
