@@ -118,22 +118,28 @@ function birthday (birthdayData){
 function createElements (data){
     
     let result = '';
-    for (let article of data){
+    console.log(result);
+    
+    if (data.length == 0){
+        result = `<h2>Sorry, no results<h2>`;
+    }else{
+        for (let article of data){
         
-        result += 
-        `
-        <article>
-        <h2>Name: ${article.name}<h2>
-        <h3><i>Nickname: ${article.nickname}</i></h3>
-        <img src='${article.img}'>
-        <p>Appearance in season(s): ${seasonAppearances(article.appearance)}</p>
-        <p>Occupation: ${occupation(article.occupation)}</p>
-        <p>Birthday: ${birthday(article.birthday)}</p>
-        <p>Portrayed by: ${article.portrayed}</p>
-        <p>Status: ${article.status}</p>
-        </article>
-        `
-    };
+            result += 
+            `
+            <article>
+            <h2>Name: ${article.name}<h2>
+            <h3><i>Nickname: ${article.nickname}</i></h3>
+            <img src='${article.img}'>
+            <p>Appearance in season(s): ${seasonAppearances(article.appearance)}</p>
+            <p>Occupation: ${occupation(article.occupation)}</p>
+            <p>Birthday: ${birthday(article.birthday)}</p>
+            <p>Portrayed by: ${article.portrayed}</p>
+            <p>Status: ${article.status}</p>
+            </article>
+            `
+        };
+    }
 
     content.innerHTML = result;
 }
