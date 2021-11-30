@@ -21,7 +21,8 @@ async function getData (selectDataByAPI) {
 
 
 
-let pressGenerateRandomCharacterButton = document.getElementById('generateRandomCharacterButton');
+let pressGenerateRandomCharacterButton = document.getElementById('generateRandomCharacterButton')
+console.log(pressGenerateRandomCharacterButton);
 pressGenerateRandomCharacterButton.addEventListener('click', function(){
     
     document.body.style.backgroundImage = "url('img/1-16.jpg')";
@@ -30,18 +31,17 @@ pressGenerateRandomCharacterButton.addEventListener('click', function(){
 })
 
 
+// Code no longer necessary because of input field eventListener below
 
-let pressSearchButton = document.getElementById('searchButton');
+/*let pressSearchButton = document.getElementById('searchButton');
 pressSearchButton.addEventListener('click', function(){
-    
-    /* Code no longer necessary because of input field eventListener below
 
     document.body.style.backgroundImage = "url('img/1-16.jpg')";
     let searchFieldInput = document.getElementById('searchField').value;
     let searchCharacterAPI = 'characters?name=' + searchFieldInput;*/
     document.getElementById('searchField').value = '';
-    //getData(searchCharacterAPI);
-});
+    /*getData(searchCharacterAPI);
+});*/
 
 
 
@@ -53,8 +53,6 @@ writingInSearchFieldInput.addEventListener('input', function(){
     let searchCharacterAPI = 'characters?name=' + searchFieldInput;
     getData(searchCharacterAPI);
 })
-
-
 
 
 
