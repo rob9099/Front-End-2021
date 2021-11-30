@@ -39,15 +39,15 @@ pressGenerateRandomCharacterButton.addEventListener('click', function(){
 
 // Code no longer necessary because of input field eventListener below
 
-/*let pressSearchButton = document.getElementById('searchButton');
+let pressSearchButton = document.getElementById('searchButton');
 pressSearchButton.addEventListener('click', function(){
 
-    document.body.style.backgroundImage = "url('img/1-16.jpg')";
+    /*document.body.style.backgroundImage = "url('img/1-16.jpg')";
     let searchFieldInput = document.getElementById('searchField').value;
     let searchCharacterAPI = 'characters?name=' + searchFieldInput;*/
     document.getElementById('searchField').value = '';
-    /*getData(searchCharacterAPI);
-});*/
+    //getData(searchCharacterAPI);
+});
 
 
 
@@ -84,10 +84,10 @@ function occupation(occupationData){
 
 
 function seasonAppearances(seasonAppearanceData){
-        
+        console.log(seasonAppearanceData);
     let seasonAppearancesString = '';
         
-        if(seasonAppearanceData == null){
+        if(seasonAppearanceData == null || seasonAppearanceData.length == 0){
             seasonAppearancesString = `<i>Missing data</i>`;
         }else{
             for(let appearance of seasonAppearanceData){
@@ -102,7 +102,7 @@ function seasonAppearances(seasonAppearanceData){
 
 function birthday (birthdayData){
     let birthday = '';
-    if(birthdayData == null){
+    if(birthdayData == null || 'Unknown'){
         birthday = `<i>Unknown</i>`;
     }else if(birthdayData.length == 24){
         birthday = birthdayData;
