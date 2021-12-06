@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 let content = document.getElementById('content');
 
@@ -19,22 +19,24 @@ async function getData (selectDataByAPI) {
     }
 }
 
-/* Ska fråga dig om hjälp till varför det här inte fungerar
+// Ska fråga dig om hjälp till varför det här inte fungerar
 
-let pressGenerateRandomCharacterButton = $("generateRandomCharacterButton");
+let pressGenerateRandomCharacterButton = $('#generateRandomCharacterButton');
 console.log(pressGenerateRandomCharacterButton);
-$("pressGenerateRandomCharacterButton").click(function(){
-    $("body").css ("background-image", "url('img/1-16.jpg')");
-});*/
+pressGenerateRandomCharacterButton.click(function(){
+    $("body").css("background-image", "url('img/1-16.jpg')");
+    let randomCharacterAPI = 'character/random';
+    getData(randomCharacterAPI);
+});
 
 
-  let pressGenerateRandomCharacterButton = document.getElementById('generateRandomCharacterButton');
+/*  let pressGenerateRandomCharacterButton = document.getElementById('generateRandomCharacterButton');
 pressGenerateRandomCharacterButton.addEventListener('click', function(){
     
     document.body.style.backgroundImage = "url('img/1-16.jpg')";
     let randomCharacterAPI = 'character/random';    
     getData(randomCharacterAPI);
-})
+})*/
 
 
 // Code no longer necessary because of input field eventListener below
